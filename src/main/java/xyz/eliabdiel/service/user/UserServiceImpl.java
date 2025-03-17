@@ -18,8 +18,8 @@ import xyz.eliabdiel.model.user.dto.JwtAuthResponse;
 import xyz.eliabdiel.model.user.dto.LoginDto;
 import xyz.eliabdiel.model.user.dto.RegisterDto;
 import xyz.eliabdiel.model.user.role.Role;
-import xyz.eliabdiel.repository.RoleRepository;
-import xyz.eliabdiel.repository.UserRepository;
+import xyz.eliabdiel.repository.user_role.RoleRepository;
+import xyz.eliabdiel.repository.user_role.UserRepository;
 
 import java.util.HashSet;
 import java.util.Set;

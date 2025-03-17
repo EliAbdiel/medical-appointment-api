@@ -40,7 +40,7 @@ public class PatientEntity {
         this.active = true;
     }
 
-    public void delete() {
+    public void deactivatePatient() {
         this.active = false;
     }
 }

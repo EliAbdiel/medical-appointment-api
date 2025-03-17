@@ -1,4 +1,4 @@
-package xyz.eliabdiel.repository;
+package xyz.eliabdiel.repository.patient;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -17,7 +17,7 @@ public interface PatientRepository extends JpaRepository<PatientEntity, UUID> {
     @Query("""
             SELECT p.active
             FROM PatientEntity p
-            WHERE p.id=:patientId
+            WHERE p.id = :patientId
             """)
     boolean findActiveById(UUID patientId);
 }
