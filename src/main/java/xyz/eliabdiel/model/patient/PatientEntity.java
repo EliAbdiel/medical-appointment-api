@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.*;
 import xyz.eliabdiel.model.address.Address;
 import xyz.eliabdiel.model.patient.dto.RegisterPatient;
+import xyz.eliabdiel.model.patient.dto.UpdatePatientDto;
 
 import java.util.UUID;
 
@@ -38,6 +39,19 @@ public class PatientEntity {
         this.document = patient.document();
         this.address = new Address(patient.address());
         this.active = true;
+    }
+
+    public void updatePatient(UpdatePatientDto updatePatient) {
+
+        if (updatePatient.name() != null) {
+            this.name = updatePatient.name();
+        }
+        if (updatePatient.telephone() != null) {
+            this.telephone = updatePatient.telephone();
+        }
+        if (updatePatient.address() != null) {
+            this.address.updateAddress(updatePatient.address());
+        }
     }
 
     public void deactivatePatient() {

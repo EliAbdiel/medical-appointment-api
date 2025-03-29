@@ -8,6 +8,7 @@ import java.util.UUID;
 public record PatientDetails(
         UUID id,
         String name,
+        String email,
         String telephone,
         String document,
         Address address) {
@@ -16,6 +17,7 @@ public record PatientDetails(
         this(
                 patient.getId(),
                 patient.getName(),
+                patient.getEmail(),
                 patient.getTelephone(),
                 patient.getDocument(),
                 patient.getAddress()

@@ -8,7 +8,10 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponentsBuilder;
 import xyz.eliabdiel.model.patient.dto.RegisterPatient;
+import xyz.eliabdiel.model.patient.dto.UpdatePatientDto;
 import xyz.eliabdiel.service.patient.PatientService;
+
+import java.util.UUID;
 
 @RestController
 @RequestMapping("/patient")
@@ -26,5 +29,15 @@ public class PatientController {
     public ResponseEntity<?> registerPatient(@RequestBody @Valid RegisterPatient registerPatient,
                                              UriComponentsBuilder uriBuilder) {
         return patientService.registerPatient(registerPatient, uriBuilder);
+    }
+
+    @PutMapping
+    public ResponseEntity<?> update(@RequestBody @Valid UpdatePatientDto updatePatient) {
+        return patientService.updatePatient(updatePatient);
+    }
+
+    @DeleteMapping("/{patientId}")
+    public ResponseEntity<?> delete(@PathVariable UUID patientId) {
+        return patientService.deletePatient(patientId);
     }
 }
